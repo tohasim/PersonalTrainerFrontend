@@ -1,11 +1,11 @@
 <div class="template">
-	<h3 style="margin-top: 0.5em; min-height: 1em">Sign up with Car's 'R' Us</h3>
+	<h3 style="margin-top: 0.5em; min-height: 1em">Sign up to get your own personal training plan</h3>
 	<hr />
 	<div>
 		<form id="form" style="max-width: 900px">
 			<div class="row">
 				<div class="col-md-2">
-					<label for="input-username">User Name</label>
+					<label for="input-username">Username</label>
 				</div>
 				<div class="col-md-3">
 					<input id="input-username" required />
@@ -25,51 +25,42 @@
 					<input type="password" id="input-password" required />
 				</div>
 			</div>
+			<br>
 			<div class="row">
 				<div class="col-md-2">
-					<label for="input-firstname">First Name</label>
+					<label for="input-gender">Gender</label>
 				</div>
 				<div class="col-md-3">
-					<input id="input-firstname" />
+					<input id="input-gender" />
 				</div>
 				<div class="col-md-2">
-					<label for="input-lastname">Last Name</label>
+					<label for="input-age">Age</label>
 				</div>
 				<div class="col-md-5">
-					<input id="input-lastname " />
+					<input id="input-age" />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-2">
-					<label for="input-street">Street</label>
+					<label for="input-weight">Weight</label>
 				</div>
-				<div class="col-md-10">
-					<input id="input-street" />
+				<div class="col-md-3">
+					<input id="input-weight" />
 				</div>
-			</div>
-			<div class="row">
 				<div class="col-md-2">
-					<label class="col-md-2" for="input-city">City</label>
+					<label class="col-md-2" for="input-goal">Goal</label>
 				</div>
 				<div class="col-md-4">
-					<input id="input-city" />
-				</div>
-				<div class="col-md-1">
-					<label for="input-zip">Zip</label>
-				</div>
-				<div class="col-md-5">
-					<input id="input-zip" />
+					<input id="input-goal" />
 				</div>
 			</div>
 			<div class="row">
 				<p id="status" style="min-height: 1em; margin-top: 0.5em"></p>
 			</div>
 			<div class="row" style="margin-top: 2em">
-				<button id="btn-submit-car" class="btn btn-dark">Register</button>
+				<button id="btn-signup" class="btn btn-dark">Register</button>
 				&nbsp;
-				<a id="goto-login" href="/login" data-navigo style="display: none"
-					>Go to login?</a
-				>
+				<a id="goto-login" href="/login" data-navigo style="display: none">Go to login?</a>
 			</div>
 		</form>
 	</div>

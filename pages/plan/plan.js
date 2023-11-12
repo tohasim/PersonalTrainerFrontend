@@ -1,20 +1,32 @@
+import { API_URL } from "/settings.js"
+
 var numberOfWeeks = 7;
 
-export function initPlan() {
-	fetch("pages/plan/plan.json")
-		.then((response) => response.json())
-		.then((data) => {
-			var answer = data.answer;
-			// Populate user info
-			document.getElementById("goal").innerHTML = answer.goal;
-			document.getElementById("age").innerHTML = answer.age;
-			document.getElementById("gender").innerHTML = answer.gender;
-			document.getElementById("weight").innerHTML = answer.weight;
+export async function initPlan() {
+	const options = {
+		method: "Get",
+		headers: { "Accept": "application/json" }
+	}
+	const token = localStorage.getItem("token")
+	if (!token) {
+		return
+	}
 
-			// Generate fitness plan table
-			generateFitnessPlanTable(answer);
-		});
+	options.headers.Authorization = "Bearer " + token
+	var data = await fetch(API_URL + "/trainer/create-plan?username=" + localStorage.getItem("user"), options)
+		.then((response) => response.json())
+
+	var answer = data.answer;
+	// Populate user info
+	document.getElementById("goal").innerHTML = answer.goal;
+	document.getElementById("age").innerHTML = answer.age;
+	document.getElementById("gender").innerHTML = answer.gender;
+	document.getElementById("weight").innerHTML = answer.weight;
+
+	// Generate fitness plan table
+	generateFitnessPlanTable(answer);
 }
+
 // Function to generate the table
 function generateFitnessPlanTable(data) {
 	var table = document.getElementById("fitness-plan");
